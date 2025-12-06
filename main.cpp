@@ -6,7 +6,6 @@
 *   
 *
 *******************************************/
-
 #include <bits/stdc++.h>
 #include "include/CelsiusFahrenheit.h"
 
