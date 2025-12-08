@@ -29,7 +29,7 @@ void convertor()
     else if(option == 3)
     {
         double secound;
-        std::cout << "Secound to kilometre: ";
+        std::cout << "Secound: ";
         std::cin >> secound;
         std::cout << speedOfLight(secound) << " Kilometer" << "\n";
     }

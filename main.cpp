@@ -7,10 +7,15 @@
 *
 *******************************************/
 #include <bits/stdc++.h>
+#include <cstdlib>
 #include "include/CelsiusFahrenheit.h"
 
 int main()
 {
+    std::cout << "\033[1;31mWelcome \033[0m";
+    system("hostname");
+    std::cout << std::endl;
+    
     while(true)
     {
         int option;
@@ -22,6 +27,10 @@ int main()
         if(option == 1)
         {
             convertor();
+        }
+        else if(option == 2)
+        {
+
         }
         
     }
