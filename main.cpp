@@ -12,19 +12,25 @@
 
 int main()
 {
-    std::cout << "\033[1;31mWelcome \033[0m";
-    system("hostname");
+    bool run = true;
+    std::cout << "\033[1;36mWelcome \033[0m";
+    system("hostname"); 
     std::cout << std::endl;
-    
-    while(true)
+    while(run)
     {
+        std::cout << "Type Zero(0) to exit" << std::endl;
         int option;
         std::cout << "Xx=========== Console Lab ===========xX" << std::endl;
-        std::cout << "1) Convertor\n";
+        std::cout << "1) Convertors\n";
         std::cout << "Xx===================================xX" << std::endl;
+        std::cout << "Enter a number: ";
         std::cin >> option;
 
-        if(option == 1)
+        if(option == 0)
+        {
+            run = false;
+        }
+        else if(option == 1)
         {
             convertor();
         }
@@ -32,6 +38,7 @@ int main()
         {
 
         }
+
         
     }
 
