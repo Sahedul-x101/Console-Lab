@@ -1,39 +1,56 @@
 #include <iostream>
+#include <limits>
 #include "../include/CelsiusFahrenheit.h"
 
 
 void convertor()
 {
-    int option;
-    std::cout << " Welcome to the convertor app\n";
-    std::cout << "1) Celsius to Fahrenheit\n";
-    std::cout << "2) Fahrenheit to Celsius\n";
-    std::cout << "3) Speed of Light per Second Kilometre\n";
-    std::cout << "Enter your option: ";
-    std::cin >> option;
+    bool run = true;
+    while(run)
+    {
+        int option;
+        std::cout << " Welcome to the convertor app\n";
+        std::cout << "0) Return to the menu\n";
+        std::cout << "1) Celsius to Fahrenheit\n";
+        std::cout << "2) Fahrenheit to Celsius\n";
+        std::cout << "3) Speed of Light per Second Kilometre\n";
+        std::cout << "Enter your option: ";
 
-    if(option == 1)
-    {
-        double celsius;
-        std::cout << "Enter the celsius value: ";
-        std::cin >> celsius;
-        std::cout << "Fahrenheit: " << celsiusToFahrenheit(celsius) << "°F" << "\n";
+        if(std::cin >> option && option >= 0 && option <=3)
+        {
+            if(option == 0)
+            {
+                run = false;
+            }
+            else if(option == 1)
+            {
+                double celsius;
+                std::cout << "Enter the celsius value: ";
+                std::cin >> celsius;
+                std::cout << "Fahrenheit: " << celsiusToFahrenheit(celsius) << "F" << "\n";
+            }
+            else if(option == 2)
+            {
+                double fahrenheit;
+                std::cout << "Enter the fahrenheit value: ";
+                std::cin >> fahrenheit;
+                std::cout << "Celsius: "<< fahrenheitToCelsius(fahrenheit) << "C"<< "\n";
+            }
+            else if(option == 3)
+            {
+                double secound;
+                std::cout << "Secound: ";
+                std::cin >> secound;
+                std::cout << speedOfLight(secound) << " Km" << "\n";
+            }
+        }
+        else
+        {
+            std::cout << "! invalid option please enter a number\n";
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
     }
-    else if(option == 2)
-    {
-        double fahrenheit;
-        std::cout << "Enter the fahrenheit value: ";
-        std::cin >> fahrenheit;
-        std::cout << "Celsius: "<< fahrenheitToCelsius(fahrenheit) << "°C"<< "\n";
-    }
-    else if(option == 3)
-    {
-        double secound;
-        std::cout << "Secound: ";
-        std::cin >> secound;
-        std::cout << speedOfLight(secound) << " Kilometer" << "\n";
-    }
-
 }
 
 double celsiusToFahrenheit(double celsius)
